@@ -1,0 +1,35 @@
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media screen and (min-width: 15em) and (max-width: 47em) {
+    grid-template-columns: 1fr;
+  }
+}
+.productItem {
+  display: grid;
+  grid-template-columns: 2fr 150px;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--border);
+  overflow: hidden;
+
+  @media screen and (min-width: 15em) and (max-width: 47em) {
+    grid-template-columns: 1fr;
+  }
+
+  h5 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { RecoilRoot } from 'recoil';
 import Header from '../components/Header';
 import '../styles/globals.scss';
 
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Header />
       <main className="container">
-        <Component {...pageProps} />
+        <RecoilRoot>
+          <Component {...pageProps} />
+        </RecoilRoot>
       </main>
     </>
   );
