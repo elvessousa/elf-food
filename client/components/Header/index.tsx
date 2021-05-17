@@ -1,23 +1,27 @@
 // import Image from 'next/image';
 import Link from 'next/link';
+import AddressModal from '../AddressModal';
 import SearchBox from '../SearchBox';
 
 export default function Header() {
   return (
-    <nav>
-      <Link href="/">
-        <a>
-          <h2>ElFood</h2>
-        </a>
-      </Link>
-      <SearchBox />
-      <ul>
-        <li>
-          <Link href="/restaurants">
-            <a>Restaurantes</a>
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav>
+        <Link href="/">
+          <a>
+            <h2>ElFood</h2>
+          </a>
+        </Link>
+        <SearchBox />
+        <ul>
+          <li>
+            <Link href="/restaurants">
+              <a>Restaurants</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <AddressModal />
+    </>
   );
 }

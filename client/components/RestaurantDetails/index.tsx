@@ -15,8 +15,6 @@ export default function RestaurantDetails() {
     return <div>Carregando...</div>;
   }
 
-  console.log(restaurant);
-
   return (
     <>
       <Details {...restaurant} />

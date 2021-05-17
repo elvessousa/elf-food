@@ -4,6 +4,8 @@ import truncateString from '../../utils/truncateString';
 import toCurrency from '../../utils/toCurrency';
 
 import styles from './CategoryProducts.module.scss';
+import AddProductModal from '../AddProductModal';
+import { useState } from 'react';
 
 type CategoryProductItem = {
   id: number;
@@ -15,19 +17,27 @@ type CategoryProductItem = {
 
 type CategoryProductsProps = {
   title: string;
+  restaurant: Object;
   products: CategoryProductItem[];
 };
 
 export default function CategoryProducts({
   title,
   products,
+  restaurant,
 }: CategoryProductsProps) {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   return (
     <>
       <h2>{title}</h2>
       <div className={styles.productsList}>
         {products?.map((product: CategoryProductItem, i: number) => (
-          <div key={i} className={styles.productItem}>
+          <div
+            key={i}
+            className={styles.productItem}
+            onClick={() => setSelectedProduct(product)}
+          >
             <section>
               <header>
                 <h5>{product.name}</h5>
@@ -49,6 +59,10 @@ export default function CategoryProducts({
           </div>
         ))}
       </div>
+      <AddProductModal
+        showModal={selectedProduct != null}
+        restaurant={restaurant}
+      />
     </>
   );
 }

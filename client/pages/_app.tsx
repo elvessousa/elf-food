@@ -15,12 +15,12 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Header />
-      <main className="container">
-        <RecoilRoot>
+      <RecoilRoot>
+        <Header />
+        <main className="container">
           <Component {...pageProps} />
-        </RecoilRoot>
-      </main>
+        </main>
+      </RecoilRoot>
     </>
   );
 }

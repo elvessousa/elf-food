@@ -10,7 +10,7 @@ export default function Home() {
       <h1>
         <TypeWriter text="Comida saúdavel e deliciosa direto na sua casa" />
       </h1>
-      <Link href="/">
+      <Link href="/restaurants">
         <button className="call-button">
           <FaCrosshairs />
           <span>Buscar</span>
