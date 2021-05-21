@@ -65,6 +65,7 @@ nav {
   justify-content: space-between;
 
   ul {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -103,15 +104,25 @@ nav {
   background-color: var(--white);
   box-shadow: 0 0 40px var(--gray);
   z-index: 2;
+  position: relative;
 
   header {
     border-bottom: 1px solid var(--border);
     padding: 0.5rem;
-    min-width: 30rem;
+    width: 20rem;
   }
 
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+  }
+
+  h3,
   h4 {
     margin: 0;
+    text-align: center;
   }
 
   form {
@@ -154,6 +165,29 @@ nav {
       font-weight: bold;
       border-radius: 0.5rem;
       margin-top: 1rem;
+    }
+  }
+
+  .item {
+    margin-bottom: 1rem;
+    border-top: 1px solid var(--border);
+    padding: 0.5rem;
+
+    hgroup,
+    p {
+      display: flex;
+      margin: 0;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
     }
   }
 }

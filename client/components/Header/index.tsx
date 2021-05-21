@@ -1,9 +1,23 @@
 // import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { FaCrosshairs, FaShoppingBag } from 'react-icons/fa';
 import AddressModal from '../AddressModal';
+import CartModal from '../CartModal';
 import SearchBox from '../SearchBox';
 
 export default function Header() {
+  const [showModal, setShowModal] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+
+  function onShow(show: boolean) {
+    setShowModal(show);
+  }
+
+  function onShowCart(show: boolean) {
+    setShowCart(show);
+  }
+
   return (
     <>
       <nav>
@@ -19,9 +33,24 @@ export default function Header() {
               <a>Restaurants</a>
             </Link>
           </li>
+          <li>
+            <Link href="#">
+              <a onClick={() => setShowCart(true)}>
+                <FaShoppingBag />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a onClick={() => setShowModal(true)}>
+                <FaCrosshairs />
+              </a>
+            </Link>
+          </li>
         </ul>
       </nav>
-      <AddressModal />
+      <AddressModal showModal={showModal} onShow={onShow} />
+      <CartModal showModal={showCart} onHide={onShowCart} />
     </>
   );
 }

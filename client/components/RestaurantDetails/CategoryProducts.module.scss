@@ -14,6 +14,7 @@
   border-radius: 1rem;
   box-shadow: 0 0 20px var(--border);
   overflow: hidden;
+  cursor: pointer;
 
   @media screen and (min-width: 15em) and (max-width: 47em) {
     grid-template-columns: 1fr;

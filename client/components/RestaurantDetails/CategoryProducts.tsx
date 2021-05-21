@@ -62,6 +62,8 @@ export default function CategoryProducts({
       <AddProductModal
         showModal={selectedProduct != null}
         restaurant={restaurant}
+        product={selectedProduct}
+        onHide={() => setSelectedProduct(null)}
       />
     </>
   );

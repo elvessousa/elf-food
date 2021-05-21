@@ -6,7 +6,7 @@ import addressState from '../store/atoms/addressAtom';
 export default function getRestaurants() {
   const router = useRouter();
   const { category, q } = router.query;
-  const [address, setAddress] = useRecoilState(addressState);
+  const [address] = useRecoilState(addressState);
   let params = '';
 
   if (category) {

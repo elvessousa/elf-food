@@ -6,9 +6,10 @@ import addressState from '../../store/atoms/addressAtom';
 
 type AddressFormProps = {
   show: (show: boolean) => void;
+  onShow: (show: boolean) => void;
 };
 
-export function AddressForm({ show }: AddressFormProps) {
+export function AddressForm({ show, onShow }: AddressFormProps) {
   const { available_cities, isLoading, isError } = getAvailableCities();
   const [address, setAddress] = useRecoilState(addressState);
   const [cityChanged, setCityChanged] = useState(false);
@@ -36,6 +37,7 @@ export function AddressForm({ show }: AddressFormProps) {
       router.push('/restaurants');
     }
     show(false);
+    onShow(false);
   };
 
   return (
