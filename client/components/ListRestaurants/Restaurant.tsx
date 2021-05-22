@@ -6,7 +6,7 @@ import { FaStar } from 'react-icons/fa';
 
 type RestaurantProps = {
   id: number;
-  image: string;
+  image?: string;
   name: string;
   description: string;
   category_title: string;

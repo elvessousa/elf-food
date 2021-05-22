@@ -157,15 +157,6 @@ nav {
     label {
       font-weight: bold;
     }
-
-    button {
-      background-color: var(--red);
-      padding: 1rem;
-      color: var(--white);
-      font-weight: bold;
-      border-radius: 0.5rem;
-      margin-top: 1rem;
-    }
   }
 
   .item {
@@ -190,6 +181,22 @@ nav {
       margin: 0;
     }
   }
+
+  .action {
+    text-align: center;
+  }
+
+  .action,
+  form {
+    button {
+      background-color: var(--red);
+      padding: 1rem;
+      color: var(--white);
+      font-weight: bold;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+    }
+  }
 }
 
 .overlay {
@@ -202,4 +209,10 @@ nav {
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+.half {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }

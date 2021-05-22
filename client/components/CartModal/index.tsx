@@ -1,34 +1,23 @@
-import Image from 'next/image';
-import { FormEvent, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import cartState from '../../store/atoms/cartAtom';
-import toCurrency from '../../utils/toCurrency';
-import truncateString from '../../utils/truncateString';
 import Cart from '../Cart';
-
-type Restaurant = {
-  id: number;
-};
-
-type Product = {
-  image_url: string;
-  name: string;
-  price: number;
-  description: string;
-};
 
 type CartModalProps = {
   showModal: boolean;
-  onHide: (showModal: boolean) => void;
+  onShow: (showModal: boolean) => void;
 };
 
-export default function CartModal({ showModal, onHide }: CartModalProps) {
-  const [cart, setCart] = useRecoilState(cartState);
+export default function CartModal({ showModal, onShow }: CartModalProps) {
+  const [cart] = useRecoilState(cartState);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setShow(showModal);
-  }, [showModal, onHide]);
+    if (showModal) {
+      setShow(showModal);
+    }
+  }, [showModal]);
 
   return (
     <>
@@ -43,6 +32,13 @@ export default function CartModal({ showModal, onHide }: CartModalProps) {
             </header>
             <div>
               <Cart />
+              {cart.products.length > 0 && (
+                <div className="action">
+                  <Link href="/orders/new">
+                    <button>Finalizar pedido</button>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>

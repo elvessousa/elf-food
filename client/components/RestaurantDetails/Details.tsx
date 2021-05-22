@@ -26,11 +26,11 @@ export default function Details({
           height={200}
           objectFit="cover"
         />
-        <p>
-          {description}
+        <div>
+          <p>{description}</p>
           <hr />
-          <span>Entrega: {toCurrency(Number(delivery_tax))}</span>
-        </p>
+          <p>Entrega: {toCurrency(Number(delivery_tax))}</p>
+        </div>
       </div>
     </section>
   );

@@ -50,7 +50,7 @@ export default function Header() {
         </ul>
       </nav>
       <AddressModal showModal={showModal} onShow={onShow} />
-      <CartModal showModal={showCart} onHide={onShowCart} />
+      <CartModal showModal={showCart} onShow={onShowCart} />
     </>
   );
 }

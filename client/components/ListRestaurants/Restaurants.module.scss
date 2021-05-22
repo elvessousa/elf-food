@@ -10,6 +10,7 @@
 
 .restaurantItem {
   display: grid;
+  cursor: pointer;
   grid-template-columns: 7rem 1fr 2rem;
   background-color: var(--white);
   border-radius: 1rem;

@@ -47,7 +47,7 @@ export default function Cart() {
   return (
     <>
       <h4>{cart.restaurant.name}</h4>
-      {cart.products.map((product: Product, i) => (
+      {cart.products.map((product: Product) => (
         <div key={product.id} className="item">
           <hgroup>
             <h5>
