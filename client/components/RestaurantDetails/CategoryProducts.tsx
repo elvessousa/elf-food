@@ -6,6 +6,11 @@ import toCurrency from '../../utils/toCurrency';
 import styles from './CategoryProducts.module.scss';
 import AddProductModal from '../AddProductModal';
 import { useState } from 'react';
+import { useModal } from '../../hooks/useModal';
+
+type Restaurant = {
+  id: number;
+};
 
 type CategoryProductItem = {
   id: number;
@@ -17,7 +22,7 @@ type CategoryProductItem = {
 
 type CategoryProductsProps = {
   title: string;
-  restaurant: Object;
+  restaurant: Restaurant;
   products: CategoryProductItem[];
 };
 
@@ -26,7 +31,13 @@ export default function CategoryProducts({
   products,
   restaurant,
 }: CategoryProductsProps) {
+  const { productModal, setProductModal } = useModal();
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleSelectProduct = (product: CategoryProductItem) => {
+    setSelectedProduct(product);
+    setProductModal(true);
+  };
 
   return (
     <>
@@ -36,7 +47,7 @@ export default function CategoryProducts({
           <div
             key={i}
             className={styles.productItem}
-            onClick={() => setSelectedProduct(product)}
+            onClick={() => handleSelectProduct(product)}
           >
             <section>
               <header>
@@ -59,12 +70,9 @@ export default function CategoryProducts({
           </div>
         ))}
       </div>
-      <AddProductModal
-        showModal={selectedProduct != null}
-        restaurant={restaurant}
-        product={selectedProduct}
-        onHide={() => setSelectedProduct(null)}
-      />
+      {productModal && (
+        <AddProductModal restaurant={restaurant} product={selectedProduct} />
+      )}
     </>
   );
 }

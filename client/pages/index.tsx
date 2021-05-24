@@ -6,7 +6,10 @@ import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   return (
-    <section className={styles.hero}>
+    <section
+      className={styles.hero}
+      style={{ backgroundImage: 'url(/hero.jpg)' }}
+    >
       <h1>
         <TypeWriter text="Comida saúdavel e deliciosa direto na sua casa" />
       </h1>

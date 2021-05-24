@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin: auto;
+  width: 80vw;
 
   @media screen and (min-width: 15em) and (max-width: 47em) {
     grid-template-columns: 1fr;

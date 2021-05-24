@@ -5,6 +5,8 @@
   border-radius: 1rem;
   box-shadow: 0 0 20px var(--border);
   overflow: hidden;
+  width: 80vw;
+  margin: auto;
 
   @media screen and (min-width: 15em) and (max-width: 47em) {
     grid-template-columns: 1fr;

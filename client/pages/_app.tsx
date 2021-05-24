@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
 import Header from '../components/Header';
+import { ModalProvider } from '../contexts/ModalContext';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <ModalProvider>
       <Head>
         <title>Elf Food</title>
         <link rel="icon" href="/favicon.ico" />
@@ -21,7 +22,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </main>
       </RecoilRoot>
-    </>
+    </ModalProvider>
   );
 }
 

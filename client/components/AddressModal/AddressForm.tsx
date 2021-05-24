@@ -1,15 +1,12 @@
 import { useRouter } from 'next/router';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useRecoilState } from 'recoil';
+import { useModal } from '../../hooks/useModal';
 import getAvailableCities from '../../services/getAvailableCities';
 import addressState from '../../store/atoms/addressAtom';
 
-type AddressFormProps = {
-  show: (show: boolean) => void;
-  onShow: (show: boolean) => void;
-};
-
-export function AddressForm({ show, onShow }: AddressFormProps) {
+export function AddressForm() {
+  const { setAddressModal } = useModal();
   const { available_cities, isLoading, isError } = getAvailableCities();
   const [address, setAddress] = useRecoilState(addressState);
   const [cityChanged, setCityChanged] = useState(false);
@@ -36,8 +33,7 @@ export function AddressForm({ show, onShow }: AddressFormProps) {
     if (cityChanged) {
       router.push('/restaurants');
     }
-    show(false);
-    onShow(false);
+    setAddressModal(false);
   };
 
   return (

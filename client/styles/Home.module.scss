@@ -1,11 +1,36 @@
 .hero {
-  margin: 2rem 0;
+  height: 100vw;
+  background: center no-repeat;
+  background-size: cover;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 0;
+  }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    color: var(--white);
+    text-shadow: 0 5px 0 var(--red);
     line-height: 1;
     width: 70%;
     margin: 3rem auto;
+    z-index: 1;
+  }
+
+  button {
+    z-index: 1;
   }
 }

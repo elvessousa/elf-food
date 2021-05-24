@@ -3,10 +3,23 @@ import CategoryProducts from './CategoryProducts';
 import { useRouter } from 'next/router';
 import getRestaurant from '../../services/getRestaurant';
 
+type CategoryProductItem = {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image_url: string;
+};
+
+type ProductCategory = {
+  title: string;
+  restaurant: Object;
+  products: CategoryProductItem[];
+};
+
 export default function RestaurantDetails() {
   const router = useRouter();
   const { id } = router.query;
-
   const { restaurant, isLoading, isError } = getRestaurant(String(id));
 
   if (isError) {
@@ -18,13 +31,15 @@ export default function RestaurantDetails() {
   return (
     <>
       <Details {...restaurant} />
-      {restaurant?.product_categories?.map((product_category, i: number) => (
-        <CategoryProducts
-          key={i}
-          restaurant={restaurant}
-          {...product_category}
-        />
-      ))}
+      {restaurant?.product_categories?.map(
+        (product_category: ProductCategory, i: number) => (
+          <CategoryProducts
+            key={i}
+            restaurant={restaurant}
+            {...product_category}
+          />
+        )
+      )}
     </>
   );
 }

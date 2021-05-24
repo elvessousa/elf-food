@@ -1,22 +1,13 @@
 // import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import { FaCrosshairs, FaShoppingBag } from 'react-icons/fa';
+import { useModal } from '../../hooks/useModal';
 import AddressModal from '../AddressModal';
 import CartModal from '../CartModal';
 import SearchBox from '../SearchBox';
 
 export default function Header() {
-  const [showModal, setShowModal] = useState(false);
-  const [showCart, setShowCart] = useState(false);
-
-  function onShow(show: boolean) {
-    setShowModal(show);
-  }
-
-  function onShowCart(show: boolean) {
-    setShowCart(show);
-  }
+  const { addressModal, cartModal, setAddressModal, setCartModal } = useModal();
 
   return (
     <>
@@ -26,31 +17,27 @@ export default function Header() {
             <h2>ElFood</h2>
           </a>
         </Link>
-        <SearchBox />
         <ul>
           <li>
             <Link href="/restaurants">
-              <a>Restaurants</a>
+              <a>Restaurantes</a>
             </Link>
           </li>
           <li>
-            <Link href="#">
-              <a onClick={() => setShowCart(true)}>
-                <FaShoppingBag />
-              </a>
-            </Link>
+            <button onClick={() => setCartModal(!cartModal)}>
+              <FaShoppingBag /> Carrinho
+            </button>
           </li>
           <li>
-            <Link href="#">
-              <a onClick={() => setShowModal(true)}>
-                <FaCrosshairs />
-              </a>
-            </Link>
+            <button onClick={() => setAddressModal(!addressModal)}>
+              <FaCrosshairs /> Endereço
+            </button>
           </li>
         </ul>
+        <SearchBox />
       </nav>
-      <AddressModal showModal={showModal} onShow={onShow} />
-      <CartModal showModal={showCart} onShow={onShowCart} />
+      {addressModal && <AddressModal />}
+      {cartModal && <CartModal />}
     </>
   );
 }
