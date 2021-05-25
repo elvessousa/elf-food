@@ -26,7 +26,7 @@ export default function ListRestaurants() {
         </p>
       );
     } else {
-      return restaurants.map((restaurant: Restaurant, i: number) => (
+      return restaurants?.map((restaurant: Restaurant, i: number) => (
         <Restaurant key={i} {...restaurant} className={styles.restaurantItem} />
       ));
     }
@@ -34,7 +34,7 @@ export default function ListRestaurants() {
 
   return (
     <>
-      <h3>Restaurantes</h3>
+      <h3>Restaurantes encontrados</h3>
       <div className={styles.restaurantList}>{renderContent()}</div>
     </>
   );

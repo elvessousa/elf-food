@@ -1,7 +1,7 @@
 .restaurantList {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
   margin: auto;
   width: 80vw;
 
@@ -11,12 +11,12 @@
 }
 
 .restaurantItem {
-  display: grid;
-  cursor: pointer;
-  grid-template-columns: 7rem 1fr 2rem;
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 0 0 20px var(--border);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 7rem 1fr 2rem;
   overflow: hidden;
 
   @media screen and (min-width: 15em) and (max-width: 47em) {
@@ -29,8 +29,9 @@
   }
 
   p {
-    margin: 0 0 0.5rem 0;
     line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+    opacity: 0.7;
   }
 
   section {
@@ -38,16 +39,19 @@
   }
 
   aside {
+    color: var(--orange);
     display: flex;
     place-items: center;
-    color: var(--orange);
   }
 
   footer {
+    margin: 0;
+    text-align-last: left;
+
     small {
       border: 1px solid var(--border);
-      padding: 0.2rem 0.3rem;
       display: inline-block;
+      padding: 0.2rem 0.3rem;
     }
   }
 }

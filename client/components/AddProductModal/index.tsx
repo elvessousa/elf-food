@@ -70,10 +70,7 @@ export default function AddProductModal({
             <strong>{toCurrency(product.price)}</strong>
             <p>{truncateString(product.description, 60)}</p>
           </div>
-          <form
-            onSubmit={addProduct}
-            style={{ display: 'flex', justifyContent: 'space-between' }}
-          >
+          <form className="action" onSubmit={addProduct}>
             <input
               type="number"
               value={quantity}

@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,900;1,700&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -21,6 +21,9 @@ function MyApp({ Component, pageProps }) {
         <main className="container">
           <Component {...pageProps} />
         </main>
+        <footer>
+          <p>Este aplicativo foi criado no projeto OneBitFood V2.</p>
+        </footer>
       </RecoilRoot>
     </ModalProvider>
   );

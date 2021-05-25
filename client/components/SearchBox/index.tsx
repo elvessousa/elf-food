@@ -16,6 +16,7 @@ export default function SearchBox() {
       <input
         type="text"
         className="search-input"
+        placeholder="Busca"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

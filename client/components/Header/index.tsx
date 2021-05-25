@@ -1,6 +1,6 @@
 // import Image from 'next/image';
 import Link from 'next/link';
-import { FaCrosshairs, FaShoppingBag } from 'react-icons/fa';
+import { FaCrosshairs, FaMortarPestle, FaShoppingBag } from 'react-icons/fa';
 import { useModal } from '../../hooks/useModal';
 import AddressModal from '../AddressModal';
 import CartModal from '../CartModal';
@@ -13,14 +13,16 @@ export default function Header() {
     <>
       <nav>
         <Link href="/">
-          <a>
-            <h2>ElFood</h2>
+          <a className="logo">
+            <h2>elfood</h2>
           </a>
         </Link>
         <ul>
           <li>
             <Link href="/restaurants">
-              <a>Restaurantes</a>
+              <a>
+                <FaMortarPestle /> Restaurantes
+              </a>
             </Link>
           </li>
           <li>

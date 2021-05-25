@@ -10,15 +10,15 @@ export default function getRestaurants() {
   let params = '';
 
   if (category) {
-    params = `${params == '' ? '?' : '&'}category=${category}`;
+    params += `${params == '' ? '?' : '&'}category=${category}`;
   }
 
   if (q) {
-    params = `${params == '' ? '?' : '&'}q=${q}`;
+    params += `${params == '' ? '?' : '&'}q=${q}`;
   }
 
   if (address.city !== '') {
-    params = `${params == '' ? '?' : '&'}city=${address.city}`;
+    params += `${params == '' ? '?' : '&'}city=${address.city}`;
   }
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
