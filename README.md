@@ -4,7 +4,7 @@
 
 #### Projeto One Bit Food
 
-![Screenshot](../.github/elfood-home.png)
+![Screenshot](./.github/elfood-home.png)
 
 ## Sobre o projeto
 
