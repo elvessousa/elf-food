@@ -11,7 +11,7 @@ export default function Home() {
       style={{ backgroundImage: 'url(/hero.jpg)' }}
     >
       <h1>
-        <TypeWriter text="Comida saúdavel e deliciosa direto na sua casa" />
+        <TypeWriter text="Comida saudável e deliciosa direto na sua casa" />
       </h1>
       <Link href="/restaurants">
         <button className="call-button">

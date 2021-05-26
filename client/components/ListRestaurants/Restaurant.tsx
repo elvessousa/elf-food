@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import truncateString from '../../utils/truncateString';
 import toCurrency from '../../utils/toCurrency';
-import { FaStar } from 'react-icons/fa';
 
 type RestaurantProps = {
   id: number;
@@ -49,9 +48,6 @@ export function Restaurant({
             <small>entrega {toCurrency(Number(delivery_tax))}</small>
           </footer>
         </section>
-        <aside>
-          <FaStar /> 5
-        </aside>
       </div>
     </Link>
   );

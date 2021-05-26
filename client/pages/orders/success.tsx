@@ -1,8 +1,8 @@
 export default function Success() {
   return (
-    <section>
+    <section className="centered">
       <h1>Obrigado!</h1>
-      <p>Seu pedido foi enviado com sucesso e está a caminho!</p>
+      <h4>Seu pedido foi enviado com sucesso e está a caminho!</h4>
     </section>
   );
 }

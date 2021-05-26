@@ -37,4 +37,13 @@
   button {
     z-index: 1;
   }
+
+  @media screen and (min-width: 15em) and (max-width: 47em) {
+    height: 100vw;
+
+    h1 {
+      font-size: 9vw;
+      width: 90%;
+    }
+  }
 }

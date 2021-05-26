@@ -1,0 +1,70 @@
+.call-button {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  transition: filter 0.2s;
+  width: 10rem;
+  font-weight: bold;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+
+  svg {
+    transform: translateY(15%);
+  }
+
+  span {
+    margin-left: 0.5rem;
+  }
+}
+
+.centered {
+  width: 80vw;
+  margin: auto;
+  text-align: center;
+}
+
+.half {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media screen and (min-width: 15em) and (max-width: 47em) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.categories {
+  margin: auto;
+  width: 80vw;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--back) 30%, transparent 100%);
+    z-index: 1;
+    width: 3rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to left, var(--back) 30%, transparent 100%);
+    z-index: 1;
+    width: 3rem;
+  }
+  .slick-prev::before,
+  .slick-next::before {
+    color: var(--black);
+  }
+}

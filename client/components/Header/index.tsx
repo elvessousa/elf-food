@@ -17,7 +17,7 @@ export default function Header() {
             <h2>elfood</h2>
           </a>
         </Link>
-        <ul>
+        <ul className="app-links">
           <li>
             <Link href="/restaurants">
               <a>

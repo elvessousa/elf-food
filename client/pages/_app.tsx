@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ModalProvider>
       <Head>
-        <title>Elf Food</title>
+        <title>elfood</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -22,7 +22,11 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </main>
         <footer>
-          <p>Este aplicativo foi criado no projeto OneBitFood V2.</p>
+          <p>
+            Criado no evento OneBitFood V2.
+            <br />
+            Por Elves Sousa
+          </p>
         </footer>
       </RecoilRoot>
     </ModalProvider>
