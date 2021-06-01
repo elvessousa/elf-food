@@ -2,7 +2,7 @@
     Elfood
 </h1>
 
-#### Projeto One Bit Food
+#### Projeto One Bit Food - OneBitCode
 
 ![Screenshot](./.github/elfood-home.png)
 
